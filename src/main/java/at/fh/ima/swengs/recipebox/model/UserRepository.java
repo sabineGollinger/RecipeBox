@@ -12,7 +12,7 @@ import java.util.List;
 @RepositoryRestResource
 public interface UserRepository extends PagingAndSortingRepository<User, Long> {
 
-    //This would be exposed under the URL: http://localhost:8080/passengers/search/findByFirstNameAndLastName
-    public List<User> findByFirstNameAndLastName(@Param("firstName") String firstName, @Param("lastName")String lastName);
+    //This would be exposed under the URL: http://localhost:8080/user/search/findByFirstNameAndLastName
+    public List<User> findByFirstnameAndLastname(@Param("firstname") String firstname, @Param("lastname")String lastname);
 
 }

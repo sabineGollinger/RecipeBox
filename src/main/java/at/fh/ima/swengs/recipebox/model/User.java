@@ -12,13 +12,8 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by johann on 8/23/16.
- */
-
 @Entity
 public class User {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -33,7 +28,7 @@ public class User {
     private String lastname;
 
     @JsonIgnore
-    private String password;
+    //private String password;
 
     //TODO: OneToMany Recipe
     /*
