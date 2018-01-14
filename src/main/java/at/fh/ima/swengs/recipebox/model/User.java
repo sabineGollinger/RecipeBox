@@ -31,10 +31,8 @@ public class User {
     //private String password;
 
     //TODO: OneToMany Recipe
-    /*
     @OneToMany(mappedBy = "user",orphanRemoval = true)
-    private List<recipe> bookings;
-    */
+    private List<Recipe> recipes;
 
     @Version
     private long version;
@@ -91,7 +89,7 @@ public class User {
     }
 
     //TODO: Recipe
-    /*
+
     public List<Recipe> getRecipes() {
         return recipes;
     }
@@ -99,5 +97,5 @@ public class User {
     public void setRecipes(List<Recipe> recipes) {
         this.recipes = recipes;
     }
-    */
+
 }
