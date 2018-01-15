@@ -10,8 +10,9 @@ import javax.persistence.*;
 import java.util.Date;
 
 /**
- * Created by Sabine on 18.12.2017.
+ * Created by Michaela
  */
+
 @Entity
 public class Recipe {
 
@@ -20,33 +21,20 @@ public class Recipe {
     private long id;
 
     private String name;
-
     private String category;
-
-    private String ingredients;
-
+    private String ingredient;
     private String preparation;
-
-    private String hints;
+    private String hint;
 
     @ManyToOne
     private String user;
 
-    private String image;
+    //private String image;
 
     @JsonDeserialize(using = JsonDateDeserializer.class)
     @JsonSerialize(using = JsonDateSerializer.class)
     @Temporal(TemporalType.DATE)
     private Date addedDate;
-
-    @JsonIgnore
-    //private String password;
-
-    //TODO: OneToMany Recipe
-    /*
-    @OneToMany(mappedBy = "user",orphanRemoval = true)
-    private List<recipe> bookings;
-    */
 
     @Version
     private long version;
@@ -55,12 +43,13 @@ public class Recipe {
     public Recipe() {
     }
 
-    public Recipe(String name, String category, String ingredients, String preparation, String hints) {
+    public Recipe(String name, String category, String ingredient, String preparation, String hint, String user) {
         this.name = name;
         this.category = category;
-        this.ingredients = ingredients;
+        this.ingredient = ingredient;
         this.preparation = preparation;
-        this.hints = hints;
+        this.hint = hint;
+        this.user = user;
     }
 
     public long getId() {
@@ -87,12 +76,12 @@ public class Recipe {
         this.category = category;
     }
 
-    public String getingredients() {
-        return ingredients;
+    public String getIngredient() {
+        return ingredient;
     }
 
-    public void setIngredients(String ingredients) {
-        this.ingredients = ingredients;
+    public void setIngredient(String ingredient) {
+        this.ingredient = ingredient;
     }
 
     public String getPreparation() {
@@ -103,12 +92,10 @@ public class Recipe {
         this.preparation = preparation;
     }
 
-    public String getHints() {
-        return hints;
-    }
+    public String getHint() { return hint; }
 
-    public void setHints(String hints) {
-        this.hints = hints;
+    public void setHint(String hint) {
+        this.hint = hint;
     }
 
     public String getUser() { return user; }
