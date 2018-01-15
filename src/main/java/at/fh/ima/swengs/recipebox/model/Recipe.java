@@ -27,7 +27,7 @@ public class Recipe {
     private String hint;
 
     @ManyToOne
-    private String user;
+    private User user;
 
     //private String image;
 
@@ -43,13 +43,12 @@ public class Recipe {
     public Recipe() {
     }
 
-    public Recipe(String name, String category, String ingredient, String preparation, String hint, String user) {
+    public Recipe(String name, String category, String ingredient, String preparation, String hint) {
         this.name = name;
         this.category = category;
         this.ingredient = ingredient;
         this.preparation = preparation;
         this.hint = hint;
-        this.user = user;
     }
 
     public long getId() {
@@ -98,9 +97,12 @@ public class Recipe {
         this.hint = hint;
     }
 
-    public String getUser() { return user; }
+    public User getUsername() { return user; }
 
-    public void setUser(String user) { this.user = user; }
+    public void setUsername(User user) { this.user = user; }
 
+    public Date getAddedDate() { return addedDate; }
+
+    public void setAddedDate(String user) { this.addedDate = addedDate; }
 
 }
