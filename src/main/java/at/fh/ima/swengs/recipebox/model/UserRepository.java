@@ -1,8 +1,10 @@
 package at.fh.ima.swengs.recipebox.model;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+
 
 import java.util.List;
 
@@ -13,6 +15,10 @@ import java.util.List;
 public interface UserRepository extends PagingAndSortingRepository<User, Long> {
 
     //This would be exposed under the URL: http://localhost:8080/user/search/findByFirstNameAndLastName
+
+    //http://localhost:8080/users/search/findByFirstnameAndLastname?firstname=sabine&lastname=gollinger
     public List<User> findByFirstnameAndLastname(@Param("firstname") String firstname, @Param("lastname")String lastname);
 
+    //http://localhost:8080/users/search/findByEmail?email=sabine.gollinger@edu.fh-joanneum.at
+    public User findByEmail(@Param("email") String email);
 }
