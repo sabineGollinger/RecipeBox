@@ -21,4 +21,7 @@ public interface UserRepository extends PagingAndSortingRepository<User, Long> {
 
     //http://localhost:8080/users/search/findByEmail?email=sabine.gollinger@edu.fh-joanneum.at
     public User findByEmail(@Param("email") String email);
+
+    //http://localhost:8080/users/search/findByEmail?id=1
+    public User findById(@Param("id") int id);
 }
