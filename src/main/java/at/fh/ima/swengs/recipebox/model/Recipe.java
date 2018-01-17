@@ -39,16 +39,16 @@ public class Recipe {
     @Version
     private long version;
 
-
     public Recipe() {
     }
 
-    public Recipe(String name, String category, String ingredient, String preparation, String hint) {
+    public Recipe(String name, String category, String ingredient, String preparation, String hint, User user) {
         this.name = name;
         this.category = category;
         this.ingredient = ingredient;
         this.preparation = preparation;
         this.hint = hint;
+        this.user = user;
     }
 
     public long getId() {
