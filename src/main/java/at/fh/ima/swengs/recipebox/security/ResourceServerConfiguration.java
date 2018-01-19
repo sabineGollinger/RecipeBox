@@ -32,9 +32,9 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
         .antMatchers(HttpMethod.DELETE,"/users/*","/recipes/*")
         .antMatchers(HttpMethod.PUT,"/users/*","/recipes/*")
         .antMatchers(HttpMethod.PATCH, "/users/*")
-        .antMatchers(HttpMethod.POST,"/users","/recipes")
+        .antMatchers(HttpMethod.POST,"/users/*","/recipes/*")
         .and().authorizeRequests()
-        .antMatchers("/cars/**","/recipes/**").access("hasRole('ADMIN') or hasRole('USER')")
+        .antMatchers("/users/**","/recipes/**").access("hasRole('ADMIN') or hasRole('USER')")
         //.antMatchers("/profile/**").access("hasRole('ADMIN')")
         .and().exceptionHandling().accessDeniedHandler(new OAuth2AccessDeniedHandler());
     }
