@@ -31,10 +31,12 @@ public class Recipe {
 
     //private String image;
 
+    /*
     @JsonDeserialize(using = JsonDateDeserializer.class)
     @JsonSerialize(using = JsonDateSerializer.class)
     @Temporal(TemporalType.DATE)
     private Date addedDate;
+    */
 
     @Version
     private long version;
@@ -101,8 +103,8 @@ public class Recipe {
 
     public void setUsername(User user) { this.user = user; }
 
-    public Date getAddedDate() { return addedDate; }
+    // public Date getAddedDate() { return addedDate; }
 
-    public void setAddedDate(String user) { this.addedDate = addedDate; }
+    // public void setAddedDate(String user) { this.addedDate = addedDate; }
 
 }

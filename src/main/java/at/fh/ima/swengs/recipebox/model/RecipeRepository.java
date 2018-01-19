@@ -15,6 +15,8 @@ public interface RecipeRepository extends PagingAndSortingRepository<Recipe, Lon
     public List<Recipe> findByCategory(@Param("category") String category);
     public List<Recipe> findByIngredient(@Param("ingredient") String ingredient);
     public Recipe findById(@Param("id") long id);
+    public List<Recipe> findByNameOrCategory(@Param("name") String name, @Param("category") String category);
+
     //public List<Recipe> findByNameAndIngredient(@Param("name") String name, @Param("ingredient") String ingredient);
 
 
