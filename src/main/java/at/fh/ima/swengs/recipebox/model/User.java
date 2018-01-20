@@ -7,8 +7,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -34,7 +32,6 @@ public class User {
     @JsonIgnore
     //private String password;
 
-    //TODO: OneToMany Recipe
     @OneToMany(mappedBy = "user",orphanRemoval = true)
     private List<Recipe> recipes;
 
@@ -97,9 +94,7 @@ public class User {
     }
 
     public void setPassword(String password) {
-        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        String hashedPassword = passwordEncoder.encode(password);
-        this.password = hashedPassword;
+        this.password = password;
     }
 
     public List<Recipe> getRecipes() {
