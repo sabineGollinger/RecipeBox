@@ -29,15 +29,6 @@ public class Recipe {
     @ManyToOne
     private User user;
 
-    //private String image;
-
-    /*
-    @JsonDeserialize(using = JsonDateDeserializer.class)
-    @JsonSerialize(using = JsonDateSerializer.class)
-    @Temporal(TemporalType.DATE)
-    private Date addedDate;
-    */
-
     @Version
     private long version;
 
@@ -102,9 +93,5 @@ public class Recipe {
     public User getUsername() { return user; }
 
     public void setUsername(User user) { this.user = user; }
-
-    // public Date getAddedDate() { return addedDate; }
-
-    // public void setAddedDate(String user) { this.addedDate = addedDate; }
 
 }
