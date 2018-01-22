@@ -27,7 +27,7 @@ public class Recipe {
     private String hint;
 
     @ManyToOne
-    private User user_id;
+    private User user;
 
     @Version
     private long version;
@@ -41,7 +41,7 @@ public class Recipe {
         this.ingredient = ingredient;
         this.preparation = preparation;
         this.hint = hint;
-        this.user_id = user;
+        this.user = user;
     }
 
     public long getId() {
@@ -90,8 +90,8 @@ public class Recipe {
         this.hint = hint;
     }
 
-    public User getUsername() { return user_id; }
+    public User getUsername() { return user; }
 
-    public void setUsername(User user) { this.user_id = user; }
+    public void setUsername(User user) { this.user = user; }
 
 }
