@@ -32,7 +32,7 @@ public class User {
     @JsonIgnore
     //private String password;
 
-    @OneToMany(mappedBy = "user",orphanRemoval = true)
+    @OneToMany(mappedBy = "user_id",orphanRemoval = true)
     private List<Recipe> recipes;
 
     @Version
